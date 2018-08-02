@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3]]></item>
+	<item id="Time"><![CDATA[2014-02-22 08:02]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://www.ceshi.com/SZQQ/X3/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[友言-社會化評論]]></item>
+			<item id="identifier"><![CDATA[jiong_uyan]]></item>
+			<item id="description"><![CDATA[插件定制QQ︰15326940]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[jiong_uyan/]]></item>
+			<item id="copyright"><![CDATA[1314學習網（www.discuz.1314study.com）]]></item>
+			<item id="version"><![CDATA[2.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[feedback]]></item>
+					<item id="menu"><![CDATA[問題反饋]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[7]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[changelog]]></item>
+					<item id="menu"><![CDATA[升級日志]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[8]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[addon]]></item>
+					<item id="menu"><![CDATA[<b>更多免費插件</b>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[9]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5,X2,X2.5,X3,X3.1,X3.5,X4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[使用的版塊]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jiong_fids]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[隱藏論壇自帶的回復功能]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jiong_hidereplay]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[隱藏自帶回帖分頁]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jiong_hidemultipage]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[隱藏自帶的回復內容]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jiong_hidereplaycontent]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[填寫自己的友言ID]]></item>
+				<item id="description"><![CDATA[ID獲取地址︰http://uyan.cc/
+測試時不需要填寫ID，會使用默認的ID]]></item>
+				<item id="variable"><![CDATA[jiong_uyanid]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="license"><![CDATA[[list]
+		[*][b]插件名稱︰[/b]友言-社會化評論
+		[*][b]適用版本︰[/b]Discuz! X2/X2.5
+		[*][b]插件作者︰[/b][url=http://www.1314study.com]諸葛曉明[/url]
+		[*][b]版權所屬&&支持站點︰[/b] [url]http://www.1314study.com[/url]
+		[*][b]插件簡介︰[/b]簡單、友好的社會化評論框! 網站評論框不再是冷冰冰的用戶名和email，而是來自各大微博及社交網絡的真實用戶的言論，增加了交流氛圍和樂趣。
+		[*][b][color=red]使用說明
+1、本插件無法在 localhost 或 127.0.0.1 下使用，請在正式域名下測試使用
+2、安裝後啟用插件
+3、插件設置里選擇使用的版塊
+4、到http://uyan.cc/注冊獲取自己的ID
+5、其他設置開關按自己需求設置
+[/color]
+		[/list]
+		]]></item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+		<item id="checkfile"><![CDATA[check.php]]></item>
+	</item>
+</root>
