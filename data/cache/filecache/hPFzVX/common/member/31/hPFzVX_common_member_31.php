@@ -1,0 +1,30 @@
+<?php
+$data = array (
+  'exp' => 0,
+  'data' => 
+  array (
+    'uid' => '31',
+    'email' => 'rtaptox550zz7@sohu.com',
+    'username' => 'seolv',
+    'password' => 'c84990b15015036179452ebcb53f34f0',
+    'status' => '0',
+    'emailstatus' => '0',
+    'avatarstatus' => '1',
+    'videophotostatus' => '0',
+    'adminid' => '0',
+    'groupid' => '10',
+    'groupexpiry' => '0',
+    'extgroupids' => '',
+    'regdate' => '1516075597',
+    'credits' => 15.0,
+    'notifysound' => '0',
+    'timeoffset' => '9999',
+    'newpm' => '0',
+    'newprompt' => 1,
+    'accessmasks' => '0',
+    'allowadmincp' => '0',
+    'onlyacceptfriendpm' => '0',
+    'conisbind' => '0',
+    'freeze' => '0',
+  ),
+);

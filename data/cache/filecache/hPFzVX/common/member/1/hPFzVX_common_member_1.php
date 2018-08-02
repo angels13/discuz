@@ -1,0 +1,30 @@
+<?php
+$data = array (
+  'exp' => 0,
+  'data' => 
+  array (
+    'uid' => '1',
+    'email' => 'joytaobao@hotmail.com',
+    'username' => 'joytaobao',
+    'password' => 'bcf4212868d4f31fb6a6fd4a4c0cafa6',
+    'status' => 0,
+    'emailstatus' => 1,
+    'avatarstatus' => '1',
+    'videophotostatus' => '0',
+    'adminid' => '1',
+    'groupid' => '1',
+    'groupexpiry' => '0',
+    'extgroupids' => '',
+    'regdate' => 1496169540,
+    'credits' => 212,
+    'notifysound' => '0',
+    'timeoffset' => '0',
+    'newpm' => 0,
+    'newprompt' => 0,
+    'accessmasks' => '0',
+    'allowadmincp' => '1',
+    'onlyacceptfriendpm' => '0',
+    'conisbind' => '0',
+    'freeze' => '0',
+  ),
+);

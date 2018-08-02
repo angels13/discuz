@@ -1,0 +1,30 @@
+<?php
+$data = array (
+  'exp' => 0,
+  'data' => 
+  array (
+    'uid' => '44',
+    'email' => 'kbayclf014hzm118@sohu.com',
+    'username' => 'seoij',
+    'password' => 'e291b3e71290e5e21711c9806d20187b',
+    'status' => 0,
+    'emailstatus' => '0',
+    'avatarstatus' => '1',
+    'videophotostatus' => '0',
+    'adminid' => -1,
+    'groupid' => 5,
+    'groupexpiry' => 0,
+    'extgroupids' => '',
+    'regdate' => '1516083544',
+    'credits' => 18.0,
+    'notifysound' => '0',
+    'timeoffset' => '9999',
+    'newpm' => '0',
+    'newprompt' => 2,
+    'accessmasks' => '0',
+    'allowadmincp' => '0',
+    'onlyacceptfriendpm' => '0',
+    'conisbind' => '0',
+    'freeze' => '0',
+  ),
+);

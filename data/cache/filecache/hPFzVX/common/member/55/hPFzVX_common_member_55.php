@@ -1,0 +1,30 @@
+<?php
+$data = array (
+  'exp' => 0,
+  'data' => 
+  array (
+    'uid' => '55',
+    'email' => 'zpslwzyfn@163.com',
+    'username' => '»ðßÖßÖÁø³ø',
+    'password' => '0d718708226de25cd79e46a407e4c64d',
+    'status' => '0',
+    'emailstatus' => '1',
+    'avatarstatus' => '0',
+    'videophotostatus' => '0',
+    'adminid' => '0',
+    'groupid' => '11',
+    'groupexpiry' => '0',
+    'extgroupids' => '',
+    'regdate' => '1516967297',
+    'credits' => 120,
+    'notifysound' => '0',
+    'timeoffset' => '9999',
+    'newpm' => '0',
+    'newprompt' => 2,
+    'accessmasks' => '0',
+    'allowadmincp' => '0',
+    'onlyacceptfriendpm' => '0',
+    'conisbind' => '0',
+    'freeze' => '0',
+  ),
+);
