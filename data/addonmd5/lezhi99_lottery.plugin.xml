@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[lezhi99_lottery.plugin]]></item>
+	<item id="RevisionID"><![CDATA[46529]]></item>
+	<item id="SN"><![CDATA[2017101312M20mXQPS76]]></item>
+	<item id="RevisionDateline"><![CDATA[1441015201]]></item>
+	<item id="Data">
+		<item id="/admin_sign.inc.php"><![CDATA[01aeaf3ea5845c710e683d60791c0b54]]></item>
+		<item id="/admin_login.inc.php"><![CDATA[e937dfaa4a82ea99959c82d67192001b]]></item>
+		<item id="/discuz_plugin_lezhi99_lottery_SC_GBK.xml"><![CDATA[3342a0b919142c948ab88faf13acbf2d]]></item>
+		<item id="/discuz_plugin_lezhi99_lottery_SC_UTF8.xml"><![CDATA[e9ca1614c93b8720c9b1f245a42160bf]]></item>
+		<item id="/wsq_api.class.php"><![CDATA[1acda41ea282c6393afea6c96c562af7]]></item>
+		<item id="/wsq.inc.php"><![CDATA[32c7d171fc788e8c5ebb620bfbea80dd]]></item>
+		<item id="/uninstall.php"><![CDATA[3d26ebb627f1846593c79e20fa89c79e]]></item>
+		<item id="/sign_mobile.class.php"><![CDATA[6bf0d7c455c2d17e0a43c874e07747fc]]></item>
+		<item id="/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/discuz_plugin_lezhi99_lottery_TC_UTF8.xml"><![CDATA[694b7ed6c7fc8cf2ef4cd791428a39a5]]></item>
+		<item id="/include/label.php"><![CDATA[b874ee5d50b7e4bac49de3db88a8b1dc]]></item>
+		<item id="/include/common.php"><![CDATA[dfaf259ec974bf885515287e3c35be5b]]></item>
+		<item id="/include/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/lezhi99_lottery.inc.php"><![CDATA[84fd8bd21ed3a7d6077d1e10c465a70e]]></item>
+		<item id="/sign.class.php"><![CDATA[8dd79c72066172546004ac393eb072e2]]></item>
+		<item id="/admin_ping.inc.php"><![CDATA[d46b6ab5b9c06b6c51ad6293332666bc]]></item>
+		<item id="/admin_log.inc.php"><![CDATA[d106b5403b8d61785ebfb36f089f108e]]></item>
+		<item id="/admin_extcredits.inc.php"><![CDATA[888f59a6591706c4e02693c30345b6e0]]></item>
+		<item id="/admin_prize.inc.php"><![CDATA[3d0b486a322a9ee40ad932ff308dd8e8]]></item>
+		<item id="/images/tip.jpg"><![CDATA[4c09194cefe3205c0efd8a21bd6c3eff]]></item>
+		<item id="/template/touch/index.htm"><![CDATA[d6e2be85ff27db506379aabb2bec8684]]></item>
+		<item id="/template/touch/full_screen.htm"><![CDATA[d6e2be85ff27db506379aabb2bec8684]]></item>
+		<item id="/template/index.htm"><![CDATA[f53c646141b90316e8ca4bce805b2d12]]></item>
+		<item id="/template/full_screen.htm"><![CDATA[bf09375b57116544fb120c05a56bd3ee]]></item>
+		<item id="/api.inc.php"><![CDATA[b199a4cc9a711f7256bf7198e593348f]]></item>
+		<item id="/discuz_plugin_lezhi99_lottery_TC_TC_BIG5.xml"><![CDATA[ed300111e893dcaa1b304f961f92ae2f]]></item>
+		<item id="/install.php"><![CDATA[093dfdbb45647e5bed87bff9435c6b0b]]></item>
+	</item>
+</root>

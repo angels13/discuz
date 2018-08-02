@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[darwbcomment.plugin]]></item>
+	<item id="RevisionID"><![CDATA[19242]]></item>
+	<item id="SN"><![CDATA[201706021171I1r1yigC]]></item>
+	<item id="RevisionDateline"><![CDATA[1375092001]]></item>
+	<item id="Data">
+		<item id="/pagehook.class.php"><![CDATA[b025cd895fa435819fa9f7dd9e89c095]]></item>
+		<item id="/discuz_plugin_darwbcomment_SC_GBK.xml"><![CDATA[2b74984a0673ac26f418bdaa48e84ff0]]></item>
+		<item id="/discuz_plugin_darwbcomment_SC_UTF8.xml"><![CDATA[eae8c845a1b526e38983c6e307a592ae]]></item>
+		<item id="/discuz_plugin_darwbcomment_TC_BIG5.xml"><![CDATA[c312223acb634f971d906a2e0190e273]]></item>
+		<item id="/discuz_plugin_darwbcomment_TC_UTF8.xml"><![CDATA[5c8d2554e80332ac1608e82edf4fa52a]]></item>
+		<item id="/template/forum.htm"><![CDATA[3cf0bf098840363528fb24c2f6dbaf04]]></item>
+		<item id="/template/portal.htm"><![CDATA[c4d1be35bb81fdee89e96af99586d64d]]></item>
+		<item id="/template/findex.htm"><![CDATA[d885fd49e09a8a3d7fee9b6b3e2262c0]]></item>
+	</item>
+</root>

@@ -1,0 +1,48 @@
+<?php
+/*
+	[Discuz!] (C)2001-2009 Comsenz Inc.
+	This is NOT a freeware, use is subject to license terms
+ */
+
+if(!defined('IN_DISCUZ')) {
+       exit('Access Denied'); 
+}
+
+class plugin_jiong_uyan {
+	
+}
+
+class plugin_jiong_uyan_forum extends plugin_jiong_uyan{
+	function viewthread_postbottom_output(){
+		global $_G,$postlist,$allowpostreply,$multipage;
+		$rerurn = array();
+		//获取插件配置
+		$jiong_uyan = $_G['cache']['plugin']['jiong_uyan'];
+		$jiong_fids_show = (array)unserialize($jiong_uyan['jiong_fids']);
+		
+		if(in_array($_G['fid'],$jiong_fids_show)){
+			$jiong_uyanid = $jiong_uyan['jiong_uyanid'] ? $jiong_uyan['jiong_uyanid'] : '1588426';
+			include template('jiong_uyan:uyan');
+			$rerurn[] = $jiong_uyan_rerurn;
+			if($jiong_uyan['jiong_hidereplay']){
+				//关闭快速回复
+				$_G['setting']['fastpost'] = '0';
+				//关闭内容下边的回复
+				$allowpostreply = '0';
+				
+			}
+			if($jiong_uyan['jiong_hidemultipage']){
+				//隐藏分页
+				$multipage = '';
+			}
+			if($jiong_uyan['jiong_hidereplaycontent']){
+				//隐藏discuz的回帖内容
+				$postfirst = array_slice($postlist, 0, 1);
+				$postlist = array();
+				$postlist = $postfirst;
+			}
+		}
+		return $rerurn;
+	}
+}
+?>
