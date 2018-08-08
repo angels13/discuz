@@ -1,0 +1,5 @@
+@charset "gb2312"; 
+
+.wp { width: 1200px; }
+	#hd .wp, #wp { min-width: 1200px; }
+
