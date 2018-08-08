@@ -1,0 +1,55 @@
+<!--{template mogu_lottery:default/touch/header}-->
+
+<div class="mall" >
+  <div class="topnav"> <a class="history" href="plugin.php?id=mogu_lottery:home&actid=$_GET['actid']"><i data-id="4"></i></a>
+    <dl style="padding-left:25px; padding-right:25px;overflow: hidden;">
+      <p class="line">$navtitle</p>
+    </dl>
+  </div>
+  <div class="leveltab flexbox tac"> <a class="flex {if $_GET['do'] == 'list'}curr{/if}" href="plugin.php?id=mogu_lottery:my&do=list&actid=$_GET['actid']">{lang mogu_lottery:WinningRecord}</a> <a class="flex {if $_GET['do'] == 'address'}curr{/if}" href="plugin.php?id=mogu_lottery:my&do=address&actid=$_GET['actid']">{lang mogu_lottery:MailingAddress}</a> </div>
+  <!--{if $_GET['do'] == 'list'}-->
+  <div class="barlist">
+    <ul>
+      <!--{loop $list $val}-->
+      <div style="height:10px;" class="bg-f5"></div>
+      <li class="bg-f plr10 bbse btse" style="padding-bottom:10px;">
+        <h3 class="title">$activitylist[$val[actid]][title]<a class="y desc" style="color:#F93;">$val['status']</a></h3>
+        <div class="flexbox">
+          <dl class="img">
+            <img src="$val['pic']">
+          </dl>
+          <dl class="flex">
+            <p class="line {if !empty($val['statu'])}xh{/if}" style="color:#39F;">$val[name]</p>
+            <p class="desc" style="margin-top:5px;overflow: hidden;line-height:16px;"> <span style="margin-right:15px; font-size:14px;">$val[introduce]</span> </p>
+          </dl>
+        </div>
+      </li>
+      <!--{/loop}-->
+    </ul>
+    <div class="p10 tac">$multipage</div>
+  </div>
+  <!--{elseif $_GET['do'] == 'address'}-->
+  <div style="height:10px;" class="bg-f5"></div>
+  <form action="" method="post">
+    <input type="hidden" name="formhash" value="{FORMHASH}">
+    <div class="addressbar bg-f" style="padding-top:10px;">
+      <dl>
+        <p class="p10 flexbox"><span style="padding-right: 10px;">{lang mogu_lottery:addressee}</span><span class="flex">
+          <input name="addressee" type="text" class="px_name" value="$data[addressee]"/>
+          </span></p>
+        <p class="p10 flexbox"><span style="padding-right: 10px;">{lang mogu_lottery:telephone}</span><span class="flex">
+          <input name="telephone" type="text" class="px_phone" value="$data[telephone]">
+          </span></p>
+        <p class="p10 flexbox"><span style="padding-right: 10px;">{lang mogu_lottery:address}</span> <span class="flex">
+          <textarea name="address" class="px_address">$data[address]</textarea>
+          </span> </p>
+      </dl>
+    </div>
+    <div class="tac bg-f p10" id="BoxDiv" style="padding-bottom:20px;">
+      <button type="submit" name="submit" class="button" id="submit_btn" value="true">{lang mogu_lottery:Submit}</button>
+    </div>
+  </form>
+  <!--{/if}--> 
+</div>
+
+<!--{template mogu_lottery:default/touch/footer}-->

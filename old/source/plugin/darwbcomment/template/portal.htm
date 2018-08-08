@@ -1,0 +1,52 @@
+<!--{block return}-->
+
+<script type="text/javascript">
+function darwbcomment() {
+	if(typeof(WBComment)=='undefined' || typeof(WBComment.init)=='undefined') {
+		setTimeout(darwbcomment, 100);
+		return;
+	}
+
+	var main = document.createElement('iframe');
+	main.id = 'WBCommentFrame';
+	main.src = '{$this->apiurl}&url=' + encodeURIComponent('{$this->url}');
+	main.scrolling = 'no';
+	main.frameBorder = 0;
+	main.style.width = '{$this->width}px';
+	main.style.margin = '8px auto 4px auto';
+	main.style.display = 'block';
+
+	<!--{if $this->aposition == 'click1'}-->
+	var click = $('click_div');
+	if(!click) return;
+	var container = click.parentNode;
+	container.insertBefore(main, click);
+	<!--{elseif $this->aposition == 'click2'}-->
+	var click = $('click_div');
+	if(!click) return;
+	var container = click.parentNode;
+	container.insertBefore(main, click.nextSibling);
+	<!--{elseif $this->aposition == 'bottom'}-->
+	var divmn = \${C}('mn', $('ct'), 'div');
+	if(!divmn || divmn.length==0) return;
+	var container = divmn[0];
+	container.appendChild(main);
+	<!--{/if}-->
+
+	window.WBComment.init({ 'id': main.id });
+}
+
+function darwbcomment_loadjs() {
+	var js = document.createElement('script');
+	js.type = 'text/javascript';
+	js.src = 'http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js';
+	js.charset = 'utf-8';
+	document.getElementsByTagName('head')[0].appendChild(js);
+	darwbcomment();
+}
+
+if({$this->delayload}) _attachEvent(window, 'load', darwbcomment_loadjs, document);
+else darwbcomment_loadjs();
+</script>
+
+<!--{/block}-->

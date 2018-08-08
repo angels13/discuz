@@ -1,0 +1,209 @@
+<!--{template mogu_lottery:default/touch/header}-->
+
+<div class="main" >
+  <a class="float return" onclick="history.go(-1);"><i data-id="&#x34;"></i></a>
+  <a class="float user" href="plugin.php?id=mogu_lottery:my&actid=$actid"><i data-id="&#x56;"></i></a>
+  <div class="turntable">
+    <div style="height:50px;"></div>
+    <div class="TurnBox">
+      <div id="Turn">
+        <section class="gb-wheel-container" id="gbWheel">
+          <div class="gb-wheel-content gb-wheel-run">
+            <ul class="gb-wheel-line"></ul>
+            <div class="gb-wheel-list"></div>
+          </div>
+          <a href="javascript:;" class="gb-wheel-btn" id="gbLottery"><b>{lang mogu_lottery:Start}</b></a>
+        </section>
+      </div>
+      <a class="float prize dialog" href="plugin.php?id=mogu_lottery:misc&act=introduce&actid=$actid"><i data-id="&#xe008;"></i></a>
+    </div>
+    <div style="position: relative; z-index: 2; color: #F5F5F5;">
+      <div class="chancenum">{$chancetxt}{$credittxt}</div>
+      
+      <div id="Scroll" class="announcement" style="height: 80px; overflow: hidden;">
+        <ul>
+          <!--{loop $announcement $item}-->
+          <li>$item</li>
+          <!--{/loop}-->
+        </ul>
+      </div>
+      
+      <p class="copyright">&copy; $_G['setting']['sitename']</p>
+      
+    </div>
+    <div class="superimposed"></div>
+    <div class="TurnBg"><img src="source/plugin/mogu_lottery/template/default/touch/images/beam.png" /></div>
+  </div>
+</div>
+
+<audio id="MyAudio" preload="auto" src="source/plugin/mogu_lottery/static/voice/audio.mp3"></audio>
+<script type="text/javascript" src="source/plugin/mogu_lottery/static/js/fingerprint2.min.js"></script> 
+<script>
+/*滚动开始*/
+function AutoScroll(obj) {
+	var height = $(obj).find("li:first").height();
+	$(obj).find("ul:first").animate({
+		marginTop: "-"+height+"px"
+	}, 500, function() {
+		$(this).css({ marginTop: "0px" }).find("li:first").appendTo(this);
+	});
+}
+var myar = setInterval('AutoScroll("#Scroll")', 5000);
+
+(function() {
+	var status = false;
+	if(!getcookie('marks')){
+		status = true;
+		popup.open('<div class="tip"><dt>{lang mogu_lottery:GetDeviceInfo}</dt></div>');
+		new Fingerprint2().get(function(result){
+			if(result){
+				setcookie('marks', result);
+				popup.close();
+				status = false;
+			}else{
+				status = false;
+			}
+		});
+	}
+	// 奖品配置
+	var awards = $prizejson;
+	
+	var len = awards.length, turnNum = 1 / len;
+	
+	var gbWheel = document.getElementById('gbWheel'),
+		lineList = gbWheel.querySelector('ul.gb-wheel-line'),
+		itemList = gbWheel.querySelector('.gb-wheel-list'),
+		lineListHtml = [],
+		itemListHtml = [];
+	// transform兼容
+	function preTransform() {
+		var cssPrefix,
+		vendors = {
+		  '': '',
+		  Webkit: 'webkit',
+		  Moz: '',
+		  O: 'o',
+		  ms: 'ms'
+		},
+		testEle = document.createElement('p'),
+		cssSupport = {};
+		//嗅探特性
+		Object.keys(vendors).some(function(vendor) {
+			if (testEle.style[vendor + (vendor ? 'T' : 't') + 'ransform'] !== undefined) {
+			    cssPrefix = vendor ? '-' + vendor.toLowerCase() + '-' : '';
+			    return true;
+			}
+		});
+		//兼容CSS前缀
+		function normalizeCss(name) {
+			name = name.toLowerCase();
+			return cssPrefix ? cssPrefix + name : name;
+		}
+		cssSupport = {
+			transform: normalizeCss('Transform'),
+		}
+		return cssSupport.transform;
+	}
+	
+	var transform = preTransform();
+	
+	awards.forEach(function(v, i, a) {
+		// 分隔线
+		lineListHtml.push('<li class="gb-wheel-litem" style="' + transform + ': rotate('+ (i * turnNum + turnNum / 2) +'turn)"></li>');
+		v.pic = v.pic ? v.pic : 'source/plugin/mogu_lottery/static/images/none.gif';
+		// 奖项
+		itemListHtml.push('<div class="gb-wheel-item" style="' + transform + ': rotate('+ (i * turnNum) +'turn)">');
+		itemListHtml.push('<div class="gb-wheel-icontent" >');
+		itemListHtml.push('<p class="gb-wheel-itext">');
+		itemListHtml.push(v.name);
+		itemListHtml.push('</p>');
+		itemListHtml.push('<p class="gb-wheel-iicon">');
+		itemListHtml.push('<img src="'+v.pic+'">');
+		itemListHtml.push('</p>');
+		itemListHtml.push('</div>');
+		itemListHtml.push('</div>');
+	});           
+	lineList.innerHTML = lineListHtml.join('');
+	itemList.innerHTML = itemListHtml.join('');
+	
+	// 旋转
+	var i = 0;
+	var chance = parseInt({$chance});
+	
+	document.getElementById('gbLottery').onclick = function() {
+		if (status != false) {
+			return false;
+		}
+		
+		$('#gbLottery b').html('{lang mogu_lottery:Startup}');
+		$('#gbLottery').css({'font-size':'20px'});
+		$(this).addClass('btnk');
+		player(0,0.1);
+		
+		status = true;
+		jQuery.ajax({
+			type: "POST",
+			dataType: "json",
+			timeout: 7000,
+			url: 'plugin.php?id=mogu_lottery:result',
+			data: {actid: '{$_GET[actid]}', lottery:'$_GET[lottery]', formhash: '{FORMHASH}'},
+			error: function(data) {
+				Reset();
+				popup.open('{lang mogu_lottery:Error_http}', 'alert');
+			},
+			success: function(data) {
+				if(data.result > 0){
+					i++;
+					player(0.6,6.2);
+					$('#gbLottery').removeClass('btnk');  //弹性还原
+					w = (360/len)-5;                      //偏移量
+					offset = (w/2)-(Math.random()*w);     //模拟重力惯性
+					angle = ((data.result - 1) * ((360 / len).toFixed(3))) + offset;
+					gbWheel.querySelector('.gb-wheel-content').style['-webkit-transform'] = 'rotate('+ ((i * 3600) - angle) +'deg)';
+					<!--{if !empty($activity['giving'][1])}-->
+					jQuery("#chance").css({'font-size':'2px'});
+					chance--;
+					jQuery("#chance").html(chance);
+					jQuery("#chance").animate({'font-size':'36px'});
+					jQuery("#chance").animate({'font-size':'24px'});
+					<!--{/if}-->
+					setTimeout(function (){
+						if(data.jackpot){
+							player(6.4,10);
+						}
+						Reset();
+						popup.open('<p class="p10" style="padding-top: 70px;"><img src="'+awards[data.result-1]['pic']+'"></p><p style="padding-top: 30px;padding-bottom: 40px;">'+data.msg+'</p>', 'alert');
+					}, 6000);
+				}else if(data.result == -1){
+					Reset();
+					popup.open('<div class="tip"><dt><p><img src="'+data.url+'" width="100%"></p><p>{lang mogu_lottery:MustFocus}</p></dt></div>');
+				}else{
+					Reset();
+					popup.open(data.msg, 'alert');
+				}
+			}
+		});
+	}
+	
+	function player(start,stop){
+		var audio = document.getElementById('MyAudio');
+		if(audio){
+			audio.currentTime = start;
+			audio.play();
+			var time = (stop - start) * 1000;
+			setTimeout(function () {
+				audio.pause();
+			}, time);
+		}
+	}
+	
+	function Reset(){
+		status = false;
+		$('#gbLottery').removeClass('btnk');
+		$('#gbLottery b').html('{lang mogu_lottery:Start}');
+		$('#gbLottery').css({'font-size':'30px'});
+	}
+}());
+
+</script>
+<!--{template mogu_lottery:default/touch/footer}-->
